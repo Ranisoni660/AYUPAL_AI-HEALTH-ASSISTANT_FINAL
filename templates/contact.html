@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom left, #88dfcc6f, #4245713d); /* Correct gradient syntax */
+            font-family: 'Poppins', sans-serif;
+            overflow-y: auto; /* Ensure the body is scrollable */
+        }
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            padding: 90px 20px 40px; 
+        }
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        /* Contact Heading */
+        .contact-heading {
+            font-size: 2rem;
+            color: #0b3d91; /* Darker Blue */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .contact-heading:hover {
+            color: #d16969; /* Red */
+            transform: translateY(-5px);
+            transition: transform 0.3s, color 0.3s;
+        }
+        /* Contact Form */
+        .contact-form {
+            background: linear-gradient(to bottom right, #ffffff, #89a48f); /* White to Grey Gradient */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.637);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .contact-form:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+        .contact-form h2 {
+            font-size: 1.5rem;
+            color: #0b3d91; /* Darker Blue */
+            margin-bottom: 20px;
+        }
+        .contact-form label {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 92%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form textarea {
+            height: 100px;
+            resize: none;
+        }
+        .contact-form button {
+            background: linear-gradient(to right, #0b3d91, #1e90ff); /* Blue Gradient */
+            color: #ffffff;
+            border: 6px solid #ffffff; /* White Border */
+            padding: 12px 20px;
+            border-radius: 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+        .contact-form button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(11, 61, 145, 0.4);
+            background: linear-gradient(to right, #08306b, #1e90ff); /* Darker Blue Gradient */
+        }
+        /* Contact Details */
+        .contact-details {
+            background: linear-gradient(to bottom right, #ffffff, #97b4b4); /* White to Grey Gradient */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .contact-details:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+        .contact-details h2 {
+            font-size: 1.8rem;
+            color: #0b3d91; /* Darker Blue */
+            margin-bottom: 20px;
+        }
+        .contact-details p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .contact-details a {
+            color: #b95c5c; /* Red */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        .contact-details .icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: #0b3d91; /* Darker Blue */
+        }
+        /* Responsive Map */
+        .map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .map:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+        }
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .contact-container {
+                padding: 60px 15px 30px; /* Adjust padding */
+            }
+            .contact-heading {
+                font-size: 1.5rem; /* Adjust font size */
+            }
+            .contact-form, .contact-details {
+                padding: 20px; /* Adjust padding */
+            }
+            .contact-form h2, .contact-details h2 {
+                font-size: 1.5rem; /* Adjust font size */
+            }
+            .contact-form label, .contact-details p {
+                font-size: 1rem; /* Adjust font size */
+            }
+            .contact-form input, .contact-form textarea {
+                width: 100%; /* Full width for inputs */
+            }
+            .contact-form button {
+                font-size: 0.9rem; /* Adjust font size */
+            }
+            .contact-details .icon {
+                font-size: 1.5rem; /* Adjust icon size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <!-- Navbar -->
+        <div class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/LOGO.png') }}" alt="Logo">
+            </div>
+            <button class="hamburger-btn"><i class="fas fa-bars"></i></button>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="{{ url_for('rani') }}"><i class="fas fa-house"></i> Home</a></li>
+                <li><a href="{{ url_for('rani') }}"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="{{ url_for('rani') }}"><i class="fas fa-stethoscope"></i> Services</a></li>
+                <li><a href="{{ url_for('project_timeline') }}"><i class="fas fa-clock"></i> Project Timeline</a></li>
+                <li><a href="{{ url_for('contact') }}"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>
+            <div class="gradient-line"></div>
+            <!-- Login/Signup Button -->
+            <div class="gradient-line"></div>
+      <div class="test-container">
+        <a href="{{ url_for('test') }}">
+            <button class="login-btn">Get Started</button>
+        </a>
+    </div>
+        </div>
+        <div class="contact-container">
+            <!-- Interactive Contact Heading -->
+            <div class="contact-heading">
+                Contact Us
+            </div>
+    
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>Get in Touch</h2>
+                    <form action="#">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+    
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+    
+                        <label for="message">Your Message</label>
+                        <textarea id="message" placeholder="Write your message here..." required></textarea>
+    
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+    
+                <!-- Contact Details -->
+                <!-- Contact Details -->
+<div class="contact-details">
+    <h2>Contact Information</h2>
+    <p><i class="fas fa-envelope icon"></i>Email: <a href="mailto:support@ayupal.com">ranisoni6298@gmail.com</a></p>
+    <p><i class="fab fa-linkedin icon"></i>LinkedIn: <a href="#">linkedin.com/in/rani-soni/</a></p>
+    <p><i class="fas fa-globe icon"></i>Website: <a href="#">www.ayupal.com</a></p>
+    <p><i class="fab fa-discord icon"></i>Discord: <a href="#">discord.gg/ayupal</a></p>
+</div>
+
+            </div>
+    
+            <!-- Map Section -->
+            <div class="map" style="margin-top: 40px;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15699248.994899148!2d68.17664577103858!3d20.593684435346123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635b07d89c81f7%3A0xf35a9d2a23f7d292!2sIndia!5e0!3m2!1sen!2sin!4v1618476716625!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+        <footer style="background-color: #08306b; color: #ffffff; padding: 60px 0; font-family: 'Poppins', sans-serif; text-align: center;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <!-- Top Section: Logo, Links, and Social Media -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; align-items: start;">
+                    <!-- Logo and Description -->
+                    <div>
+                        <h2 style="font-size: 1.8rem; margin-bottom: 15px;">AyuPal</h2>
+                        <p style="font-size: 1rem; line-height: 1.6;">
+                            AI-powered healthcare insights. Your intelligent partner in wellness and disease prevention!
+                        </p>
+                    </div>
+        
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Quick Links</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin: 10px 0;"><a href="#" style="color: #b7e4c7; text-decoration: none; font-size: 1rem;">Home</a></li>
+                            <li style="margin: 10px 0;"><a href="#" style="color: #b7e4c7; text-decoration: none; font-size: 1rem;">About Us</a></li>
+                            <li style="margin: 10px 0;"><a href="#" style="color: #b7e4c7; text-decoration: none; font-size: 1rem;">Project Timeline</a></li>
+                            <li style="margin: 10px 0;"><a href="#" style="color: #b7e4c7; text-decoration: none; font-size: 1rem;">Portfolio</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Social Media -->
+                    <div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Follow Us</h3>
+                        <div style="display: flex; justify-content: center; gap: 20px;">
+                            <a href="#" style="color: #ffffff; font-size: 1.8rem;"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" style="color: #ffffff; font-size: 1.8rem;"><i class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Divider -->
+                <div style="border-top: 1px solid #b7e4c7; margin: 40px 0;"></div>
+        
+                <!-- Bottom Section: Copyright -->
+                <div style="font-size: 0.9rem; color: #b7e4c7;">
+                    © 2025 AyuPal. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+            // Toggle the visibility of the navigation menu
+            function toggleMenu() {
+                // Select the navigation links container
+                const navLinks = document.querySelector('.nav-links');
+    
+                // Check if the element exists to avoid errors
+                if (navLinks) {
+                    // Toggle the 'show' class to display/hide the menu
+                    navLinks.classList.toggle('show');
+                } else {
+                    console.error('Error: Navigation links element not found.');
+                }
+            }
+        </script>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const loginBtn = document.querySelector('.login-btn');
+        
+            hamburgerBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('show-nav');
+                loginBtn.classList.toggle('hide-login');
+            });
+        });
+    </script>
+</body>
+</html>

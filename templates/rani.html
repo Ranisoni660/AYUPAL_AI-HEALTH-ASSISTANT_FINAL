@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylized Sine Wave Effect with Navbar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/rani.css') }}">
+  <script src="{{ url_for('static', filename='js/rani.js') }}"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="top-section">
+    <!-- Navbar -->
+    <div class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/LOGO.png') }}" alt="Logo">
+      </div>
+      <button class="hamburger-btn"><i class="fas fa-bars"></i></button>
+<!-- Navigation Links -->
+<ul class="nav-links">
+  <li><a href="#home"><i class="fas fa-house"></i> Home</a></li>
+  <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+  <li><a href="#service"><i class="fas fa-stethoscope"></i> Services</a></li>
+  <li><a href="{{ url_for('project_timeline') }}"><i class="fas fa-clock"></i> Project Timeline</a></li>
+  <li><a href="{{ url_for('contact') }}"><i class="fas fa-phone"></i> Contact</a></li>
+</ul>
+      <div class="gradient-line"></div>
+      <div class="test-container">
+        <a href="{{ url_for('test') }}">
+            <button class="login-btn">Get Started</button>
+        </a>
+    </div>
+    </div>
+    <!-- Image and Content -->
+    <div class="image-container">
+      <img src="{{ url_for('static', filename='images/bg(1).png') }}" alt="BG">
+    </div>
+
+    <div class="content-container">
+      <div class="text-box">
+        <h1>
+          Hey, I’m <i>Ayupal </i>! 👨🏻‍⚕️
+        </h1>
+        <p>
+          <span class="highlight">Think of me as your AI-powered wellness partner.🫶🏻</span>
+          I can analyze your symptoms,
+          <span class="highlight">help you discover possible conditions,</span>
+          suggest personalized medication plans, tailor diet and workout routines 🚴🏻,
+          and give you the guidance you need to stay healthy 🍀.
+        </p>
+        <p>
+          <span class="highlight">Let’s take control of your well-being together! 🩵</span>
+        </p>
+      </div>
+    </div>
+    
+    <!-- Sine-like single smooth wave -->
+      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <!-- Define the gradient -->
+        <defs>
+          <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1E90FF" /> <!-- Deep Blue -->
+            <stop offset="50%" stop-color="#FFFFFF" /> <!-- White -->
+            <stop offset="100%" stop-color="#2E8B57" /> <!-- Sea Green -->
+          </linearGradient>
+        </defs>
+        
+        <!-- Sine wave with gradient applied -->
+        <path class="wave-path" d="M0,160Q360,300 720,160T1440,160L1440,320L0,320Z" fill="url(#waveGradient)"></path>
+      </svg>
+  </div>
+  <!-- Start Diagnosis Button -->
+  <div class="button-container">
+    <button class="start-diagnosis-btn" id="startDiagnosis">Start Diagnosis</button>
+  </div>
+  <iframe 
+    src="https://www.chatbase.co/chatbot-iframe/mBf4XYxKbw9ZqHbPnLGr_" 
+    width="350" 
+    height="500" 
+    style="border: none; position: fixed; bottom: 80px; right: 20px; display: none; z-index: 1000; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);" 
+    id="chatbot-frame">
+</iframe>
+
+<!-- Chatbot Icon -->
+<div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; display: flex; align-items: center; gap: 10px; z-index: 1001;">
+    <!-- Chat Bubble Message -->
+    <div id="chatbot-message" 
+        style="background: linear-gradient(135deg, #d0eaff, #ffffff); color: #223b58; padding: 10px 15px; border-radius: 15px; font-size: 16px; box-shadow: 0 0 15px rgba(0, 120, 255, 0.4); display: none;">
+        Hey, it's <b>AyuPal</b> here... Ask your queries!
+    </div>
+
+    <!-- Chatbot Circular Icon -->
+    <div id="chatbot-icon" 
+        style="width: 60px; height: 60px; background: linear-gradient(135deg, #6ab8ff, #ffffff); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 15px rgba(0, 120, 255, 0.6); transition: transform 0.2s;">
+        <img src="{{ url_for('static', filename='images/robot-assistant.png') }}" width="50" height="50" alt="Chatbot">
+    </div>
+</div>
+
+<script>
+    document.getElementById('chatbot-icon').addEventListener('click', function() {
+        var chatbotFrame = document.getElementById('chatbot-frame');
+        var chatbotMessage = document.getElementById('chatbot-message');
+
+        if (chatbotFrame.style.display === "none") {
+            chatbotFrame.style.display = "block";
+            chatbotMessage.style.display = "none"; // Hide message once chatbot opens
+        } else {
+            chatbotFrame.style.display = "none";
+        }
+    });
+
+    // Show chat message on page load
+    setTimeout(() => {
+        document.getElementById('chatbot-message').style.display = "block";
+    }, 1300); // Message appears after 1 sec
+</script>
+
+  <!-- Gradient line between the sections -->
+<div class="gradient-line-between-sections"></div>
+  <div class="about-section" id="about">
+    <h2 class="section-title">💉 About Ayupal 🩺</h2>
+    <div class="about-content">
+        <div class="about-img">
+            <img src="{{ url_for('static', filename='images/images-removebg-preview(2).png') }}" alt="About Ayupal">
+        </div>
+        <div class="about-text">
+            <p> ✨ Ayupal is your AI-powered healthcare assistant, designed to help you stay healthy and informed 💚. Our platform analyzes your symptoms, suggests possible conditions, and provides personalized medication plans 📃. We also offer tailored diet and workout routines based on your health needs.</p>
+            <ul>
+              <br>🧫 Analyze your symptoms with precision.<br><br>
+                🧫 Discover possible health conditions.<br><br>
+                🧫 Get tailored diet and workout routines.<br><br>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Gradient line between the sections -->
+<div class="gradient-line-between-sections"></div>
+
+<!-- Why Choose Ayupal Section -->
+<div class="why-choose-section" id="why-choose">
+  <div class="why-choose-content">
+    <div class="why-choose-text">
+      <div class="why-choose-heading">
+        <h2> 🧿 Why Choose Ayupal? 👨🏻‍⚕️</h2>
+      </div>
+      <p>Ayupal is more than just a health app—it's your trusted companion 🩵 on the path to better health.</p><br>
+      <div class="why-choose-cards">
+        <div class="why-choose-card">
+          <i class="fas fa-robot"></i>
+          <h3>Advanced AI Technology</h3>
+          <br><br>
+          <p>Our platform leverages cutting-edge AI algorithms to provide accurate health assessments and personalized recommendations.</p>
+        </div>
+        <div class="why-choose-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Comprehensive Health Insights</h3>
+          <br><br>
+          <p>From symptom analysis to tailored diet and fitness plans, Ayupal covers all aspects of your health.</p>
+        </div>
+        <div class="why-choose-card">
+          <i class="fas fa-user-friends"></i>
+          <h3>Easy-to-Use Interface</h3>
+          <br><br>
+          <p>Our user-friendly design ensures that you can effortlessly navigate through the app and access the information you need.</p>
+        </div>
+        <div class="why-choose-card">
+          <i class="fas fa-clock"></i>
+          <h3>24/7 Accessibility</h3>
+          <br><br>
+          <p>Ayupal is available round the clock, ensuring that you have access to healthcare support whenever you need it.</p>
+        </div>
+        <div class="why-choose-card">
+          <i class="fas fa-lock"></i>
+          <h3>Privacy and Security</h3>
+          <br><br>
+          <p>We prioritize your privacy and ensure that your health data is kept secure and confidential.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-choose-img">
+      <img src="{{ url_for('static', filename='images/hand-drawn-ai-healthcare-illustration_52683-155544-removebg-preview.png') }}" alt="Why Choose Ayupal">
+    </div>
+  </div>
+</div>
+
+<div class="gradient-line-between-sections"></div>
+<div class="features-section">
+  <h2> 🩶 Key Features 🤍</h2>
+  <div class="features-container">
+      <div class="feature-box">
+          <i class="fas fa-diagnoses"></i>
+          <h3>Disease Prediction</h3>
+          <p>Analyze symptoms and predict diseases with high accuracy, helping users take timely action.</p>
+      </div>
+      <div class="feature-box">
+          <i class="fas fa-dumbbell"></i>
+          <h3>Workout Plans</h3>
+          <p>Get personalized workout routines tailored to your fitness goals and health needs.</p>
+      </div>
+      <div class="feature-box">
+          <i class="fas fa-apple-alt"></i>
+          <h3>Diet Plans</h3>
+          <p>Receive customized meal plans based on dietary preferences and nutritional requirements.</p>
+      </div>
+      <div class="feature-box">
+          <i class="fas fa-info-circle"></i>
+          <h3>Health Guidance</h3>
+          <p>Access expert-backed health insights, symptom explanations, and disease prevention tips.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-clock"></i>
+        <h3>Recovery Estimates</h3>
+        <p>Get estimated recovery times to understand your healing process better.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>Complications & Management</h3>
+        <p>Learn about possible complications and how to manage conditions effectively.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-user-md"></i>
+        <h3>Personalized Advice</h3>
+        <p>AI-driven recommendations for workouts, diet, and lifestyle improvements.</p>
+      </div>
+      <div class="feature-box">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Easy Navigation</h3>
+        <p>A user-friendly interface ensures quick access to all health insights.</p>
+      </div>
+  </div>
+</div>
+<div class="gradient-line-between-sections"></div>
+<!-- Diseases Ayupal Can Predict Section -->
+<div class="diseases-section" id="diseases">
+  <h2 class="section-title">🩺 Possible Diseases Ayupal Can Predict 🩺</h2>
+  <div class="diseases-content">
+    <!-- Common Infections -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r29.png') }}" alt="Common Infections Icon" class="category-icon">
+      <h3>Common Infections</h3>
+      <ul>
+        <li>🤧 Common Cold</li>
+        <li>🤒 Gastroenteritis</li>
+        <li>🚽 Urinary tract infection</li>
+        <li>🤕 Impetigo</li>
+      </ul>
+    </div>
+    <!-- Chronic Conditions -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r1.png') }}" alt="Chronic Conditions Icon" class="category-icon">
+      <h3>Chronic Conditions</h3>
+      <ul>
+        <li>❤️ Diabetes</li>
+        <li>💓 Hypertension</li>
+        <li>🦴 Osteoarthritis</li>
+        <li>🧴 Psoriasis</li>
+      </ul>
+    </div>
+    <!-- Allergic and Autoimmune Conditions -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r22.png') }}" alt="Allergic Conditions Icon" class="category-icon">
+      <h3>Allergic and Autoimmune Conditions</h3>
+      <ul>
+        <li>🤧 Allergy</li>
+        <li>😮‍💨 Bronchial Asthma</li>
+        <li>🧴 Eczema</li>
+        <li>😵‍💫 Migraine</li>
+      </ul>
+    </div>
+    <!-- Viral Infections -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r30.png') }}" alt="Viral Infections Icon" class="category-icon">
+      <h3>Viral Infections</h3>
+      <ul>
+        <li>🦠 AIDS</li>
+        <li>🧬 Hepatitis A, B, C, D, E</li>
+        <li>🐔 Chicken pox</li>
+        <li>🦟 Dengue</li>
+      </ul>
+    </div>
+    <!-- Bacterial Infections -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r7.png') }}" alt="Bacterial Infections Icon" class="category-icon">
+      <h3>Bacterial Infections</h3>
+      <ul>
+        <li>🦠 Tuberculosis</li>
+        <li>🧫 Typhoid</li>
+      </ul>
+    </div>
+    <!-- Fungal Infections -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r31.png') }}" alt="Fungal Infections Icon" class="category-icon">
+      <h3>Fungal Infections</h3>
+      <ul>
+        <li>🍄 Fungal infection</li>
+        <li>👣 Athlete's Foot</li>
+      </ul>
+    </div>
+    <!-- Gastrointestinal Conditions -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r32.png') }}" alt="Gastrointestinal Conditions Icon" class="category-icon">
+      <h3>Gastrointestinal Conditions</h3>
+      <ul>
+        <li>🤢 GERD</li>
+        <li>🦠 Peptic ulcer disease</li>
+        <li>🧬 Chronic cholestasis</li>
+      </ul>
+    </div>
+    <!-- Dermatological Conditions -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r33.png') }}" alt="Dermatological Conditions Icon" class="category-icon">
+      <h3>Dermatological Conditions</h3>
+      <ul>
+        <li>🤕 Acne</li>
+        <li>🥶 Cold Sores</li>
+        <li>😖 Canker Sores</li>
+      </ul>
+    </div>
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r27.png') }}" alt="Neurological Conditions Icon" class="category-icon">
+      <h3>Neurological and Psychological Conditions</h3>
+      <ul>
+        <li>😵‍💫 Migraine</li>
+        <li>🤯 Tension Headache</li>
+        <li>😵 Vertigo</li>
+      </ul>
+    </div>
+    <!-- Cardiovascular Conditions -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r9.png') }}" alt="Cardiovascular Conditions Icon" class="category-icon">
+      <h3>Cardiovascular Conditions</h3>
+      <ul>
+        <li>❤️‍🩹 Heart attack</li>
+        <li>💓 Hypertension</li>
+      </ul>
+    </div>
+    <!-- Musculoskeletal Conditions -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r34.png') }}" alt="Musculoskeletal Conditions Icon" class="category-icon">
+      <h3>Musculoskeletal Conditions</h3>
+      <ul>
+        <li>🦴 Arthritis</li>
+        <li>🦴 Cervical spondylosis</li>
+      </ul>
+    </div>
+    <!-- Endocrine Disorders -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r35.png') }}" alt="Endocrine Disorders Icon" class="category-icon">
+      <h3>Endocrine Disorders</h3>
+      <ul>
+        <li>🧬 Hypothyroidism</li>
+        <li>🧬 Hyperthyroidism</li>
+      </ul>
+    </div>
+    <!-- Miscellaneous -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r17.png') }}" alt="Miscellaneous Conditions Icon" class="category-icon">
+      <h3>Miscellaneous</h3>
+      <ul>
+        <li>💊 Drug Reaction</li>
+        <li>🧠 Paralysis (brain hemorrhage)</li>
+        <li>🟡 Jaundice</li>
+        <li>🍺 Alcoholic hepatitis</li>
+      </ul>
+    </div>
+    <!-- Additional Miscellaneous -->
+    <div class="category">
+      <img src="{{ url_for('static', filename='images/icons/r12.png') }}" alt="Additional Miscellaneous Conditions Icon" class="category-icon">
+      <h3>Complex Diseases</h3>
+      <ul>
+        <li>💉 Dimorphic hemorrhoids (piles)</li>
+        <li>🦵 Varicose veins</li>
+        <li>💟 Hypoglycemia</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Gradient line between the sections -->
+<div class="gradient-line-between-sections"></div>
+<!-- Motivation Section -->
+<div class="motivation-section">
+  <h2 class="section-title">🩵 Motivation 💚</h2>
+  <div class="motivation-text">
+    <p>During the COVID-19 pandemic 😷, the importance of accessible healthcare became more evident than ever. Many individuals were unable to visit hospitals due to lockdowns 🚑 , fear of infection 🤒, or overwhelmed healthcare facilities. This highlighted the need for online healthcare solutions that can provide timely medical advice and support.</p>
+    <p>Our AI-powered online doctor model is designed to bridge this gap, offering a reliable and efficient way to receive medical consultations from the safety of your home. It can analyze symptoms, suggest possible conditions, and recommend personalized treatment plans. Here are some real-life examples where our model has made a significant impact:</p>
+  </div>
+  <div class="motivation-container">
+    <div class="motivation-box">
+      <div class="motivation-image">
+        <img src="{{ url_for('static', filename='images/char1.png') }}" alt="Motivation Image 1">
+      </div>
+      <div class="motivation-content">
+        <p><strong>Maria Smith</strong></p>
+        <p>"It would be so much better if I had found out about my condition earlier based on my symptoms. Early detection could have helped me take preventive measures sooner!"</p>
+      </div>
+    </div>
+    <div class="motivation-box">
+      <div class="motivation-image">
+        <img src="{{ url_for('static', filename='images/char2.jpg') }}" alt="Motivation Image 2">
+      </div>
+      <div class="motivation-content">
+        <p><strong>David Johnson</strong></p>
+        <p>"I wish I knew exactly what workouts to do for my condition. A structured exercise plan tailored to my health could have made my recovery much more effective."</p>
+      </div>
+    </div>
+    <div class="motivation-box">
+      <div class="motivation-image">
+        <img src="{{ url_for('static', filename='images/char3.png') }}" alt="Motivation Image 3">
+      </div>
+      <div class="motivation-content">
+        <p><strong>Sarah Lee</strong></p>
+        <p>"If only I had access to simple home remedies that could have eased my symptoms! Natural solutions could have made my recovery smoother and more comfortable."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="motivation-text">
+    <p>Ayupal offers a comprehensive solution for various health concerns, providing detailed information on:</p>
+    <ul class="icon-list">
+      <li><span>🩺</span> Diets: Customized diet plans to suit your health conditions and goals.</li>
+      <li><span>🏋️‍♂️</span> Workouts: Personalized exercise routines to keep you fit and healthy.</li>
+      <li><span>🚫</span> Things to Avoid: Guidance on what to avoid based on your health conditions.</li>
+      <li><span>💊</span> Medications: Recommendations for over-the-counter and prescription medications.</li>
+      <li><span>🏠</span> Homemade Remedies: Natural remedies to complement your treatment plans.</li>
+      <li><span>⚠️</span> Potential Complications: Insights into what could happen if certain conditions are ignored.</li>
+    </ul>
+  </div>
+</div>
+<div class="gradient-line-between-sections"></div>
+<!-- Problems Faced with Other Technologies Section -->
+<div class="problems-section">
+  <h2 class="section-title">🚫 Problems Faced with Other Technologies 🚫</h2>
+  <div class="problems-container">
+    <div class="problems-box">
+      <div class="problems-content">
+        <h3>🛑 Lack of Personalization</h3>
+        <p>Many solutions provide generic advice that may not suit individual needs.</p>
+      </div>
+    </div>
+    <div class="problems-box">
+      <div class="problems-content">
+        <h3>📉 Limited Information</h3>
+        <p>Users often do not get comprehensive information on diets, workouts, medications, and other aspects of health.</p>
+      </div>
+    </div>
+    <div class="problems-box">
+      <div class="problems-content">
+        <h3>🧩 Complex User Interfaces</h3>
+        <p>Many healthcare platforms are difficult to navigate, making it hard for users to find the information they need.</p>
+      </div>
+    </div>
+  </div>
+  <div class="problems-container">
+    <div class="problems-box">
+      <div class="problems-content">
+        <h3>⏳ Delayed Responses</h3>
+        <p>Users may experience long wait times to receive medical advice or support.</p>
+      </div>
+    </div>
+    <div class="problems-box">
+      <div class="problems-content">
+        <h3>🔒 Privacy Concerns</h3>
+        <p>Some platforms do not adequately protect users' personal and medical information.</p>
+      </div>
+    </div>
+  </div>
+  <div class="problems-text">
+    <h2 class="section-subtitle">💡 Ayupal Addresses These Issues by Offering:</h2>
+    <ul class="icon-list">
+      <li><span>✨</span> <strong>Highly Personalized Advice:</strong> Our AI model provides customized recommendations based on your unique health profile.</li>
+      <li><span>📚</span> <strong>Comprehensive Health Information:</strong> From diets and workouts to medications and homemade remedies, Ayupal covers all aspects of your health.</li>
+      <li><span>👨‍💻</span> <strong>User-Friendly Interface:</strong> Our platform is designed to be intuitive and easy to use, ensuring you can quickly find the information you need.</li>
+      <li><span>⚡</span> <strong>Instant Medical Support:</strong> Receive timely advice and support without long wait times.</li>
+      <li><span>🔐</span> <strong>Enhanced Privacy:</strong> We prioritize your privacy and ensure your personal and medical information is securely protected.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Gradient line between the sections -->
+<div class="gradient-line-between-sections"></div>
+<!-- Services Section -->
+<div class="services-section" id="service">
+  <h2>🚨 Our Services 🩺</h2>
+  <div class="services-text">
+      <p>We offer a comprehensive range of services to cater to all your healthcare needs. Our AI-powered platform ensures that you receive personalized and accurate medical advice whenever you need it. Here are some of the services we provide:</p>
+  </div>
+  <div class="services-container">
+      <div class="service-box">
+          <div class="service-icon">
+              <i class="fas fa-stethoscope"></i>
+          </div>
+          <div class="service-content">
+              <h3>🩺 Health Checkups</h3>
+              <p>Regular health checkups to monitor your overall well-being and catch potential health issues early.</p>
+          </div>
+      </div>
+      <div class="service-box">
+          <div class="service-icon">
+              <i class="fas fa-pills"></i>
+          </div>
+          <div class="service-content">
+              <h3> 💊 Medication Plans</h3>
+              <p>Personalized medication plans tailored to your health needs, ensuring you take the right medication at the right time.</p>
+          </div>
+      </div>
+      <div class="service-box">
+          <div class="service-icon">
+              <i class="fas fa-dumbbell"></i>
+          </div>
+          <div class="service-content">
+              <h3>🏋️‍♂️ Fitness Programs </h3>
+              <p>Customized fitness programs to help you stay in shape and achieve your fitness goals.</p>
+          </div>
+      </div>
+      <div class="service-box">
+          <div class="service-icon">
+              <i class="fas fa-apple-alt"></i>
+          </div>
+          <div class="service-content">
+              <h3>🍎 Diet Plans </h3>
+              <p>Nutritionist-approved diet plans to maintain a healthy lifestyle and meet your dietary needs.</p>
+          </div>
+      </div>
+      <div class="service-box">
+          <div class="service-icon">
+              <i class="fas fa-headset"></i>
+          </div>
+          <div class="service-content">
+              <h3>⏱️ 24/7 Support</h3>
+              <p>Round-the-clock support to answer your health-related queries and provide immediate assistance.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal Popup -->
+<div class="modal-overlay" id="modalOverlay" style="display: none;">
+  <div class="modal-box">
+    <div id="initialOptions">
+      <h2>🩺Choose an Option</h2>
+      <button id="guestOption">Join as Guest</button>
+      <button id="loginSignup">Login/Signup</button>
+    </div>
+    <div id="loginFormContainer" style="display: none;">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Username" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="showSignup">Signup</a></p>
+    </div>
+    <div id="signupFormContainer" style="display: none;">
+      <h2>Signup</h2>
+      <form id="signupForm">
+        <input type="text" id="signupUsername" placeholder="Username" required />
+        <input type="password" id="signupPassword" placeholder="Password" required />
+        <button type="submit">Signup</button>
+      </form>
+      <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+    </div>
+  </div>
+</div>
+<footer style="background-color: #08306b; color: #ffffff; padding: 60px 0; font-family: 'Poppins', sans-serif; text-align: center;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <!-- Top Section: Logo, Links, and Social Media -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; align-items: start;">
+          <!-- Logo and Description -->
+          <div>
+              <h2 style="font-size: 1.8rem; margin-bottom: 15px;">AyuPal</h2>
+              <p style="font-size: 1rem; line-height: 1.6;">
+                  AI-powered healthcare insights. Your intelligent partner in wellness and disease prevention!
+              </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Quick Links</h3>
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                  <li style="margin: 10px 0;"><a href="#" style="color: #b7e4c7; text-decoration: none; font-size: 1rem;">Home</a></li>
+                  <li style="margin: 10px 0;"><a href="#" style="color: #b7e4c7; text-decoration: none; font-size: 1rem;">About Us</a></li>
+                  <li style="margin: 10px 0;"><a href="#" style="color: #b7e4c7; text-decoration: none; font-size: 1rem;">Project Timeline</a></li>
+                  <li style="margin: 10px 0;"><a href="#" style="color: #b7e4c7; text-decoration: none; font-size: 1rem;">Portfolio</a></li>
+              </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Follow Us</h3>
+              <div style="display: flex; justify-content: center; gap: 20px;">
+                  <a href="#" style="color: #ffffff; font-size: 1.8rem;"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" style="color: #ffffff; font-size: 1.8rem;"><i class="fab fa-discord"></i></a>
+              </div>
+          </div>
+      </div>
+
+      <!-- Divider -->
+      <div style="border-top: 1px solid #b7e4c7; margin: 40px 0;"></div>
+
+      <!-- Bottom Section: Copyright -->
+      <div style="font-size: 0.9rem; color: #b7e4c7;">
+          © 2025 AyuPal. All Rights Reserved.
+      </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const loginBtn = document.querySelector('.login-btn');
+
+    hamburgerBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show-nav');
+      loginBtn.classList.toggle('hide-login');
+    });
+  });
+</script>
+</body>
+</html>

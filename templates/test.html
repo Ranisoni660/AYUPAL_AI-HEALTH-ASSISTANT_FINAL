@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnose You - AyuPal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Add this CSS to ensure all images have the same size */
+        .disease-pictures img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin: 20px;
+        }
+        .center-content {
+            text-align: center;
+        }
+        .download-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        .download-btn:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+        .ayuscan-report {
+            position: relative;
+            padding-bottom: 60px; /* space for the download button */
+        }
+        .ayuscan-report h2 {
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const diagnoseUrl = "{{ url_for('diagnose') }}";
+        const baseImageUrl = "{{ url_for('static', filename='images') }}";
+    </script>
+</head>
+<body>
+    <div class="top-section">
+        <!-- Navbar -->
+        <div class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/LOGO.png') }}" alt="Logo">
+            </div>
+            <button class="hamburger-btn"><i class="fas fa-bars"></i></button>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="{{ url_for('rani') }}"><i class="fas fa-house"></i> Home</a></li>
+                <li><a href="{{ url_for('rani') }}"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="{{ url_for('rani') }}"><i class="fas fa-stethoscope"></i> Services</a></li>
+                <li><a href="{{ url_for('project_timeline') }}"><i class="fas fa-clock"></i> Project Timeline</a></li>
+                <li><a href="{{ url_for('contact') }}"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>
+            <div class="gradient-line"></div>
+            <!-- Login/Signup Button -->
+            <div class="button-container">
+                <a href="{{ url_for('rani') }}">
+                    <button class="login-btn">Go back to Home</button>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="welcome-message">
+                <div class="username" id="usernameDisplay">
+                    {% if username %}
+                        Welcome, {{ username }}!
+                    {% else %}
+                        Welcome!
+                    {% endif %}
+                </div>
+                <div class="diagnosis-message">
+                    <img src="https://em-content.zobj.net/thumbs/240/apple/325/blue-heart_1f499.png" alt="Blue Heart Emoji">
+                    Let's diagnose you!
+                    <img src="https://em-content.zobj.net/thumbs/240/apple/325/green-heart_1f49a.png" alt="Green Heart Emoji">
+                </div>
+            </div>
+            <div class="content">
+                <div class="left-box">
+                    <div class="section-title">Type or select the symptoms you are facing:</div>
+                    <div class="symptom-input" id="symptomInputs">
+                        <div class="symptom-group">
+                            <input type="text" id="symptom1" placeholder="Symptom 1" onfocus="populateDropdown(1)">
+                            <div class="dropdown-icon" onclick="toggleDropdown('dropdown1')">▼</div>
+                            <div class="dropdown-content" id="dropdown1"></div>
+                        </div>
+                        <div class="symptom-group">
+                            <input type="text" id="symptom2" placeholder="Symptom 2" onfocus="populateDropdown(2)">
+                            <div class="dropdown-icon" onclick="toggleDropdown('dropdown2')">▼</div>
+                            <div class="dropdown-content" id="dropdown2"></div>
+                        </div>
+                        <div class="symptom-group">
+                            <input type="text" id="symptom3" placeholder="Symptom 3" onfocus="populateDropdown(3)">
+                            <div class="dropdown-icon" onclick="toggleDropdown('dropdown3')">▼</div>
+                            <div class="dropdown-content" id="dropdown3"></div>
+                        </div>
+                        <button class="add-symptom-button" id="addSymptomButton" onclick="addSymptom()">+ Add Another Symptom</button>
+                        <button id="submitButton" onclick="submitSymptoms()">Submit</button>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="arrow"><img src="{{ url_for('static', filename='images/icons/arrow.png') }}" alt=""></div>
+                <div class="right-box">
+                    <div class="section-title">The predicted disease will be shown here:</div>
+                    <div class="prediction-report" id="predictionReport">
+                        <img src="{{ url_for('static', filename='images/a1.png') }}" alt="Default Disease Image" id="diseaseImage">
+                        <p>Predicted disease: <span id="diseaseName">None</span></p>
+                        <button onclick="tryMoreSymptoms()">Try with more symptoms</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AyuScan Report Section -->
+        <div class="ayuscan-report container center-content">
+            <h2>🩺 AYUSCAN REPORT 🩺</h2>
+            <p class="sub-heading">Your AI Health Assistant: AyuPal</p>
+            <p class="sub-heading">📅 Diagnosis Date: <span id="diagnosis-date"></span></p>
+            <hr>
+            <p>Based on the symptoms you provided, our AI-powered analysis suggests that you may be experiencing: <span class="disease-name"><strong id="predictedDisease"></strong></span>.</p>
+            <h3>📖 Understanding Your Condition:</h3>
+            <p><strong>What It Is:</strong> <span id="diseaseDescription"></span></p>
+            <p><strong>Commonality of the Disease:</strong> <span id="commonality"></span></p>
+            <hr>
+            <h3>💊 Medications That Might Help:</h3>
+            <p>The following are commonly recommended treatments. Please consult a doctor before starting any medication:</p>
+            <p id="medicationsList"></p>
+            <h3>🏡 Home Remedies & Natural Care:</h3>
+            <p>These traditional remedies may help ease symptoms and support recovery:</p>
+            <p id="homemadeSolutionsList"></p>
+            <hr>
+            <h3>🥗 Recommended Diet for Recovery:</h3>
+            <p>Proper nutrition plays a crucial role in healing. Here are some foods that can help:</p>
+            <p id="dietList"></p>
+            <h3>🏋️‍♂️ Safe & Effective Workouts:</h3>
+            <p>Light exercise can enhance recovery and improve overall well-being. Consider the following:</p>
+            <p id="workoutList"></p>
+            <hr>
+            <h3>⚠️ What to Avoid:</h3>
+            <p>To prevent worsening symptoms, it’s best to stay away from:</p>
+            <p id="neverDoList"></p>
+            <h3>⏳ Estimated Recovery Time:</h3>
+            <p>With proper care and adherence to treatment, you can expect to feel better in approximately <strong id="recoveryTime"></strong>.</p>
+            <hr>
+            <h3>🧐 Possible Causes:</h3>
+            <p>Several factors could have contributed to your condition. Some possibilities include:</p>
+            <p id="possibleReasonsList"></p>
+            <h3>⚕️ Potential Complications:</h3>
+            <p>If not addressed properly, this condition might lead to:</p>
+            <p id="complicationsList"></p>
+            <hr>
+            <!-- Verified Stamp -->
+            <div class="verified-stamp">✔ Verified by AyuPal</div>
+            <button class="download-btn" onclick="downloadReport()">Download Report</button>
+        </div>
+        <!-- Pictures Related to the Disease Section -->
+        <div class="pictures-related container">
+            <h2>🖼️ PICTURES THAT ARE RELATED TO YOUR DISEASE</h2>
+            <div id="diseasePictures" class="disease-pictures">
+                <!-- Images will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+</body>
+</html>

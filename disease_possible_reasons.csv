@@ -1,0 +1,51 @@
+Disease,Possible Reasons
+Common Cold,⭐ Viral infection (rhinovirus) | ⭐ close contact with infected individuals | ⭐ weakened immune system | ⭐ seasonal changes | ⭐ stress | ⭐ poor hygiene
+Seasonal Allergies,⭐ Pollen | ⭐ dust mites | ⭐ mold spores | ⭐ pet dander | ⭐ certain foods | ⭐ genetic predisposition | ⭐ environmental pollution | ⭐ changes in weather
+Mild Food Poisoning,⭐ Consuming contaminated food or water | ⭐ improper food handling | ⭐ undercooked food | ⭐ recent consumption of street food | ⭐ poor kitchen hygiene
+Tension Headache,⭐ Stress | ⭐ poor posture | ⭐ eye strain | ⭐ dehydration | ⭐ lack of sleep | ⭐ overworking | ⭐ skipping meals | ⭐ caffeine withdrawal
+Athlete's Foot,⭐ Fungal infection | ⭐ walking barefoot in public places (like locker rooms) | ⭐ sweaty feet | ⭐ sharing towels or shoes | ⭐ poor foot hygiene
+Mild Acne,⭐ Hormonal changes (puberty | ⭐ menstrual cycle) | ⭐ excess oil production | ⭐ clogged pores | ⭐ bacteria (Propionibacterium acnes) | ⭐ diet (high in sugars and dairy) | ⭐ genetic factors | ⭐ stress
+Mild Eczema,⭐ Genetic factors | ⭐ environmental triggers (allergens | ⭐ irritants) | ⭐ stress | ⭐ dry skin | ⭐ recent exposure to harsh soaps or detergents | ⭐ changes in weather
+Minor Cuts and Scrapes,⭐ Accidents | ⭐ falls | ⭐ sharp objects | ⭐ sports injuries | ⭐ not using protective gear | ⭐ engaging in physical activities without caution
+Cold Sores,⭐ Herpes simplex virus (HSV-1) | ⭐ stress | ⭐ sun exposure | ⭐ weakened immune system | ⭐ hormonal changes | ⭐ recent illness or fever
+Canker Sores,⭐ Stress | ⭐ minor mouth injuries | ⭐ acidic or spicy foods | ⭐ nutritional deficiencies (B12 | ⭐ folate | ⭐ iron) | ⭐ hormonal changes | ⭐ food allergies
+Fungal infection,⭐ Fungal spores | ⭐ damp environments | ⭐ weakened immune system | ⭐ poor hygiene | ⭐ wearing tight or non-breathable clothing | ⭐ recent antibiotic use
+Allergy,⭐ Exposure to allergens (pollen | ⭐ dust mites | ⭐ pet dander) | ⭐ genetic predisposition | ⭐ environmental factors (pollution) | ⭐ recent exposure to new foods | ⭐ medications | ⭐ or products
+GERD,⭐ Weak lower esophageal sphincter | ⭐ obesity | ⭐ smoking | ⭐ certain foods and beverages (spicy foods | ⭐ caffeine | ⭐ alcohol) | ⭐ stress | ⭐ eating large meals | ⭐ lying down after eating
+Chronic cholestasis,⭐ Bile duct obstruction | ⭐ liver diseases (hepatitis | ⭐ cirrhosis) | ⭐ genetic disorders | ⭐ certain medications | ⭐ recent surgery affecting the bile ducts
+Drug Reaction,⭐ Allergic reaction to medication | ⭐ side effects | ⭐ drug interactions | ⭐ recent start of a new medication | ⭐ overdose | ⭐ genetic predisposition to drug sensitivities
+Peptic ulcer disease,⭐ H. pylori infection | ⭐ long-term use of NSAIDs | ⭐ stress | ⭐ smoking | ⭐ excessive alcohol consumption | ⭐ genetic factors | ⭐ spicy foods
+AIDS,⭐ HIV infection | ⭐ unprotected sex | ⭐ sharing needles | ⭐ mother-to-child transmission | ⭐ blood transfusions with infected blood | ⭐ genetic predisposition to weaker immune response
+Diabetes,⭐ Genetic factors | ⭐ obesity | ⭐ sedentary lifestyle | ⭐ poor diet (high in sugars and fats) | ⭐ insulin resistance | ⭐ recent weight gain | ⭐ history of gestational diabetes
+Gastroenteritis,⭐ Viral or bacterial infection | ⭐ contaminated food or water | ⭐ close contact with infected individuals | ⭐ recent travel to areas with poor sanitation | ⭐ improper hand hygiene
+Bronchial Asthma,⭐ Genetic predisposition | ⭐ exposure to allergens or irritants (dust | ⭐ smoke | ⭐ pollution) | ⭐ respiratory infections | ⭐ stress | ⭐ exercise | ⭐ cold air | ⭐ recent exposure to new pets or plants
+Hypertension,⭐ Genetic factors | ⭐ obesity | ⭐ high salt intake | ⭐ lack of physical activity | ⭐ stress | ⭐ smoking | ⭐ excessive alcohol consumption | ⭐ poor diet | ⭐ age | ⭐ family history of hypertension
+Migraine,⭐ Genetic predisposition | ⭐ stress | ⭐ hormonal changes (menstrual cycle) | ⭐ certain foods and beverages (chocolate | ⭐ caffeine | ⭐ alcohol) | ⭐ sensory stimuli (bright lights | ⭐ strong smells) | ⭐ lack of sleep | ⭐ recent dietary changes
+Cervical spondylosis,⭐ Aging | ⭐ wear and tear of cervical spine | ⭐ poor posture | ⭐ neck injuries | ⭐ genetic factors | ⭐ sedentary lifestyle | ⭐ recent neck strain or injury
+Paralysis (brain hemorrhage),⭐ High blood pressure | ⭐ head trauma | ⭐ blood vessel abnormalities (aneurysm) | ⭐ blood clotting disorders | ⭐ genetic factors | ⭐ recent stroke or severe headache
+Jaundice,⭐ Liver diseases (hepatitis | ⭐ cirrhosis) | ⭐ bile duct obstruction | ⭐ hemolysis | ⭐ certain medications | ⭐ genetic disorders (Gilbert's syndrome) | ⭐ recent alcohol abuse | ⭐ exposure to toxins
+Malaria,⭐ Mosquito bites (infected with Plasmodium parasites) | ⭐ travel to endemic areas | ⭐ lack of preventive measures (mosquito nets | ⭐ repellents) | ⭐ recent travel history | ⭐ genetic factors (sickle cell trait providing partial immunity)
+Chicken pox,⭐ Varicella-zoster virus infection | ⭐ close contact with infected individuals | ⭐ weakened immune system | ⭐ lack of vaccination | ⭐ recent exposure to someone with shingles
+Dengue,⭐ Mosquito bites (infected with dengue virus) | ⭐ travel to endemic areas | ⭐ lack of preventive measures (mosquito nets | ⭐ repellents) | ⭐ recent travel history | ⭐ genetic factors
+Typhoid,⭐ Consumption of contaminated food or water | ⭐ poor sanitation | ⭐ close contact with infected individuals | ⭐ recent travel to areas with poor sanitation | ⭐ improper hand hygiene
+Hepatitis A,⭐ Consumption of contaminated food or water | ⭐ poor sanitation | ⭐ close contact with infected individuals | ⭐ recent travel to areas with poor sanitation | ⭐ lack of vaccination
+Hepatitis B,⭐ Unprotected sex | ⭐ sharing needles | ⭐ mother-to-child transmission | ⭐ exposure to infected blood | ⭐ recent body piercing or tattoo with unsterilized equipment | ⭐ lack of vaccination
+Hepatitis C,⭐ Sharing needles | ⭐ exposure to infected blood | ⭐ unprotected sex | ⭐ recent blood transfusion or organ transplant | ⭐ lack of vaccination (no vaccine available for Hep C)
+Hepatitis D,⭐ Co-infection with Hepatitis B virus | ⭐ sharing needles | ⭐ exposure to infected blood | ⭐ unprotected sex | ⭐ genetic predisposition to liver disease | ⭐ lack of vaccination for Hep B
+Hepatitis E,⭐ Consumption of contaminated food or water | ⭐ poor sanitation | ⭐ recent travel to areas with poor sanitation | ⭐ genetic predisposition to liver disease | ⭐ lack of vaccination
+Alcoholic hepatitis,⭐ Excessive alcohol consumption | ⭐ genetic predisposition to alcohol addiction | ⭐ poor nutrition | ⭐ recent binge drinking | ⭐ long-term alcohol abuse
+Tuberculosis,⭐ Mycobacterium tuberculosis infection | ⭐ close contact with infected individuals | ⭐ weakened immune system | ⭐ poor living conditions | ⭐ recent travel to areas with high TB prevalence | ⭐ genetic factors
+Pneumonia,⭐ Bacterial | ⭐ viral | ⭐ or fungal infection | ⭐ weakened immune system | ⭐ respiratory infections | ⭐ recent flu or cold | ⭐ smoking | ⭐ chronic lung diseases | ⭐ genetic predisposition to respiratory issues
+Dimorphic hemorrhoids (piles),⭐ Straining during bowel movements | ⭐ chronic constipation | ⭐ prolonged sitting | ⭐ obesity | ⭐ pregnancy | ⭐ low-fiber diet | ⭐ recent heavy lifting | ⭐ genetic predisposition
+Heart attack,⭐ Coronary artery disease | ⭐ smoking | ⭐ high blood pressure | ⭐ high cholesterol | ⭐ obesity | ⭐ sedentary lifestyle | ⭐ genetic factors | ⭐ stress | ⭐ recent physical exertion | ⭐ poor diet
+Varicose veins,⭐ Weak or damaged vein walls and valves | ⭐ prolonged standing or sitting | ⭐ obesity | ⭐ pregnancy | ⭐ genetic predisposition | ⭐ recent weight gain | ⭐ lack of physical activity
+Hypothyroidism,⭐ Autoimmune disease (Hashimoto's thyroiditis) | ⭐ iodine deficiency | ⭐ thyroid surgery | ⭐ radiation therapy | ⭐ genetic factors | ⭐ recent thyroid infection | ⭐ certain medications
+Hyperthyroidism,⭐ Autoimmune disease (Graves' disease) | ⭐ thyroid nodules | ⭐ excessive iodine intake | ⭐ genetic predisposition | ⭐ recent thyroiditis | ⭐ certain medications
+Hypoglycemia,⭐ Excessive insulin | ⭐ certain medications | ⭐ prolonged fasting | ⭐ excessive alcohol consumption | ⭐ recent increase in physical activity | ⭐ skipping meals | ⭐ genetic predisposition to metabolic disorders
+Osteoarthritis,⭐ Aging | ⭐ joint injury | ⭐ obesity | ⭐ genetic predisposition | ⭐ repetitive stress on joints | ⭐ recent joint trauma | ⭐ lack of physical activity
+Arthritis,⭐ Autoimmune disease (rheumatoid arthritis) | ⭐ wear and tear (osteoarthritis) | ⭐ infections | ⭐ metabolic disorders (gout) | ⭐ genetic factors | ⭐ recent joint injury | ⭐ obesity
+(vertigo) Paroxysmal Positional Vertigo,⭐ Displacement of calcium crystals in the inner ear | ⭐ head injury | ⭐ inner ear infections | ⭐ aging | ⭐ genetic predisposition | ⭐ recent ear surgery | ⭐ prolonged bed rest
+Acne,⭐ Hormonal changes (puberty | ⭐ menstrual cycle) | ⭐ excess oil production | ⭐ clogged pores | ⭐ bacteria (Propionibacterium acnes) | ⭐ diet (high in sugars and dairy) | ⭐ genetic factors | ⭐ stress | ⭐ use of greasy cosmetics
+Urinary tract infection,⭐ Bacterial infection (usually E. coli) | ⭐ poor hygiene | ⭐ sexual activity | ⭐ urinary tract abnormalities | ⭐ recent catheter use | ⭐ dehydration | ⭐ genetic predisposition to urinary infections
+Psoriasis,⭐ Genetic predisposition | ⭐ immune system dysfunction | ⭐ environmental triggers (stress | ⭐ infections) | ⭐ certain medications | ⭐ recent skin trauma or sunburn | ⭐ smoking | ⭐ excessive alcohol consumption
+Impetigo,⭐ Bacterial infection (usually Staphylococcus or Streptococcus) | ⭐ close contact with infected individuals | ⭐ poor hygiene | ⭐ recent skin injury | ⭐ crowded living conditions | ⭐ weakened immune system

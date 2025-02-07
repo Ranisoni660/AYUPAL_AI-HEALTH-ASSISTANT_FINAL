@@ -1,0 +1,1356 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the navigation links */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  padding: 8px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(11, 14, 17, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+/* Ensure the logo is at the left */
+.navbar .logo {
+margin-right: auto; /* Pushes everything else to the center */
+}
+
+/* Center the navigation links */
+.navbar .nav-links {
+display: flex;
+gap: 20px;
+list-style: none;
+justify-content: center;
+align-items: center;
+}
+
+/* Ensure the button stays at the rightmost */
+.test-container {
+margin-left: auto; /* Pushes the button to the rightmost */
+}
+
+/* Logo */
+.navbar .logo {
+  width: 120px;
+  height: auto;
+  overflow: hidden;
+}
+
+.navbar .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navbar .nav-links li {
+  position: relative;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: rgb(25, 16, 57);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+  background: rgba(105, 211, 228, 0.587);
+  transform: translateY(-2px);
+}
+
+.navbar .nav-links li a:active {
+  background: rgba(173, 216, 230, 0.5);
+  transform: scale(0.95);
+}
+
+.navbar .nav-links li a i {
+  color: #256494; /* Light Blue Icon Color */
+}
+
+/* Login Button */
+.navbar .login-btn {
+  background: linear-gradient(to right, #87ceeb, #03274a);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar .login-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(30, 144, 255, 0.5);
+}
+
+.navbar .login-btn:active {
+  transform: scale(0.95);
+  background: #1e90ff;
+}
+/* Top Section with subtle blue gradient */
+.top-section {
+  height: 100vh;
+  background: linear-gradient(to bottom, #e4f5f8, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+/* Hamburger Button */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: rgb(25, 16, 57);
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 25px; /* Position it to the right */
+}
+
+/* Gradient Line Animation */
+.gradient-line {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, rgb(95, 224, 215), rgb(49, 62, 116));
+  position: absolute;
+  top: 60px;
+  left: 0;
+  animation: lineAnimation 2s infinite;
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 0;
+  }
+  50% {
+    width: 0;
+  }
+  75% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Sine Wave SVG */
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1; /* Wave sits below the image */
+}
+
+/* Bottom Section */
+.bottom-section {
+  height: 100vh;
+  background: linear-gradient(to top, #d8e4fb, #d7fbda);
+  box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+/* Image Container Styling */
+.image-container {
+  position: absolute; /* Overlay it above the wave */
+  top: 46%; /* Adjust this value as needed */
+  left: 73%;
+  transform: translate(-50%, -50%); /* Center the image */
+  z-index: 15; /* Ensure it's above the wave and navbar */
+}
+
+.image-container img {
+  width: 680px; /* Adjust the size of the image */
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Wave Styling */
+.wave {
+  position: absolute;
+  bottom: 0; /* Pin the wave to the bottom of the top-section */
+  width: 100%;
+  height: auto;
+  z-index: 5; /* Ensure it is below the image */
+}
+
+/* Bottom Section */
+.bottom-section {
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* Main content container */
+.content-container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: -180px;
+  margin-left: 15px;
+  min-height: 80vh;
+  background: url('https://source.unsplash.com/random/1920x1080'); /* Beautiful background for context */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Glass effect box */
+.text-box {
+  background: rgba(255, 255, 255, 0.3); /* Transparent white */
+  border-radius: 15px; /* Rounded corners */
+  padding: 30px 20px;
+  width: 530px;
+  height: 370px;
+  margin-left: 15px;
+  margin-top: 278px;
+  left: 15px;
+  box-shadow: 0 4px 15px rgba(27, 31, 106, 0.4); /* Subtle shadow */
+  
+  /* Glass effect using blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* For compatibility across browsers */
+  
+  /* Centered text */
+  text-align: left;
+  color: #333;
+  line-height: 1.7;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the heading text */
+.text-box h1 {
+  font-size: 32px;
+  color: #084469;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Highlight important text */
+.highlight {
+  color: #5991d5; /* Goldish-yellow color for emphasis */
+  font-weight: bold;
+}
+
+/* Style paragraphs */
+.text-box p {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+/* Style the emoji alignment */
+.text-box h1 span {
+  margin-left: 8px;
+  font-size: 1em;
+}
+
+/* Overall Section Management */
+.top-section {
+  position: relative;
+  z-index: 1; /* Main content layer */
+}
+
+.button-container {
+  position: absolute; /* Position button under transparent box */
+  z-index: 2; /* Ensure it appears above background but below modal */
+  bottom: 50px; /* Adjust to place it under the box */
+  left: 21%;
+  top: 64%;
+  transform: translateX(-50%);
+}
+
+/* Start Diagnosis Button */
+.start-diagnosis-btn {
+  background: linear-gradient(45deg, #3d7d4f, #84efb8, #3a86ff);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: 4px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.start-diagnosis-btn:hover {
+  background: linear-gradient(45deg, #60ea87, #3a86ff, #3b6b47);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* About Ayupal Section */
+.about-section {
+  padding: 60px 20px;
+  background: linear-gradient(40deg,#34881ca7, #fefffd,#4ec8c47a);
+  position: relative;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: #084469;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  margin-left: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.about-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.about-text ul li {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-img {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.about-img img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+/* Gradient line between sections */
+.gradient-line-between-sections {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, rgb(241, 153, 223),#ffffff, rgb(234, 44, 69));
+  position: relative;
+  animation: lineAnimation 2s infinite;
+}
+/* Features Section */
+.features-section {
+  padding: 60px 20px;
+  background: linear-gradient(to top, #ffffff, #87ceeb);
+  position: relative;
+}
+
+.features-section h2 {
+  text-align: center;
+  font-size: 36px;
+  color: #084469;
+  margin-bottom: 40px;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 20px;
+  justify-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.feature-box {
+  background: linear-gradient(to bottom, #fff, #87ceeb);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(38, 68, 37, 0.5);
+  transition: transform 0.3s ease;
+  border: 5px solid #fff; /* Added white border */
+  width: 250px; /* Adjusted width */
+  height: 380px; /* Adjusted height */
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+}
+
+.feature-box i {
+  font-size: 30px; /* Reduced icon size */
+  color: #fff; /* Changed icon color to white */
+  background: linear-gradient(to bottom, #eccdcd, #f95c5c); /* Subtle red gradient */
+  border-radius: 50%; /* Circle shape */
+  border: 2px solid #f20808;
+  padding: 15px; /* Reduced padding */
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.feature-box h3 {
+  font-size: 24px;
+  color: #6b8eef; /* Changed heading color to white */
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it overlays all sections */
+}
+
+/* Modal Box */
+.modal-box {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Buttons Inside Modal */
+.modal-box button {
+  background: linear-gradient(45deg, #8338ec, #3a86ff);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-box button i {
+  margin-right: 8px; /* Space for icons */
+}
+
+.modal-box button:hover {
+  background: linear-gradient(45deg, #3a86ff, #8338ec);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Guest Option Message */
+.guest-message-box {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.guest-message {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Motivation Section */
+.motivation-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f0f8ff, #e0ffff);
+  text-align: center;
+}
+
+.motivation-section h2 {
+  font-size: 42px;
+  color: #084469;
+  margin-bottom: 40px;
+}
+
+.motivation-text {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.motivation-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.motivation-box {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  width: 280px;
+  height: auto; /* Adjust height as needed */
+}
+
+.motivation-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.motivation-image img {
+  height: 160px; /* Adjust height as needed */
+  width: 100%;
+  border-radius: 10px;
+}
+
+.motivation-content p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.icon-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.icon-list li {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+.icon-list li span {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+/* Problems Section */
+.problems-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #ffefef, #ffe0e0);
+  text-align: center;
+}
+
+.problems-section h2 {
+  font-size: 34px;
+  color: #b22222;
+  margin-bottom: 40px;
+}
+
+.problems-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.problems-box {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  width: 280px;
+  height: 220px; /* Ensure all boxes have the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.problems-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.problems-content h3 {
+  font-size: 22px;
+  color: #b22222;
+  margin-bottom: 10px;
+}
+
+.problems-content p {
+  font-size: 18px;
+  color: #333;
+}
+
+.problems-text {
+  max-width: 1400px;
+  margin: 10 auto 40px;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.section-subtitle {
+  font-size: 36px;
+  color: #b22222;
+  margin-bottom: 20px;
+}
+
+.icon-list li span {
+  margin-right: 10px;
+  font-size: 24px;
+}
+/* Services Section */
+.services-section {
+  padding: 60px 20px;
+  background: linear-gradient(to top, #ffffff, #87ceeb);
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 36px;
+  color: #084469;
+  margin-bottom: 40px;
+}
+
+.services-text {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-box {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  width: 300px;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  background: #87ceeb;
+  border-radius: 50%;
+  padding: 20px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 20px; /* Center align and add space below */
+}
+
+.service-icon i {
+  font-size: 30px;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-content h3 {
+  font-size: 24px;
+  color: #084469;
+  margin-bottom: 10px;
+}
+
+.service-content p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Why Choose Ayupal Section */
+.why-choose-section {
+  padding: 60px 20px;
+  background: linear-gradient(160deg,#f0495740, #fefffd,#4ec8c47a);
+  position: relative;
+}
+
+.why-choose-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.why-choose-img {
+  flex: 1;
+  text-align: center;
+}
+
+.why-choose-img img {
+  margin-right: 3px;
+  max-width: 100%;
+  height: 800px;
+}
+
+.why-choose-text {
+  flex: 2;
+  margin-right: 20px;
+}
+
+.why-choose-heading {
+  background: linear-gradient(to right, #ffffff, #266fd561);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(203, 58, 87, 0.612);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.why-choose-heading h2 {
+  font-size: 29px;
+  color: #084469;
+  margin: 0;
+}
+
+.why-choose-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.why-choose-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.why-choose-card {
+  background: linear-gradient(to bottom, #5beac851, #f0f0f0);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.why-choose-card i {
+  font-size: 40px;
+  color: #084469;
+  margin-right: 15px;
+}
+
+.why-choose-card h3 {
+  font-size: 18px;
+  color: #084469;
+  margin-bottom: 5px;
+}
+
+.why-choose-card p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: #084469;
+  margin-bottom: 40px;
+}
+
+/* Diseases Ayupal Can Predict Section */
+.diseases-section {
+  padding: 60px 50px;
+  background: linear-gradient(to bottom, #d296ce3e, #59c0c578);
+  text-align: center;
+}
+
+.diseases-section .section-title {
+  font-size: 36px;
+  color: #084469;
+  margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.diseases-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.category {
+  border-radius: 25px; /* Curved edges */
+  padding: 20px;
+  margin: 10px 15px; /* Added margin for left and right */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.8); /* Brighter shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align icon and heading */
+  text-align: center;
+  border: 6px solid; /* Thicker border */
+  border-image-source: linear-gradient(to left, #5475a7, #63c3cc); /* Gradient border */
+  border-image-slice: 1;
+  background: linear-gradient(to bottom, #ffffff, #878282ac); /* Light background for all boxes */
+  height: 320px; /* Fixed height to ensure all boxes are of same size */
+}
+
+.category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 9px 22px rgb(255, 255, 255); /* Brighter shadow on hover */
+}
+
+.category h3 {
+  font-size: 25px; /* Increased font size */
+  color: #084469;
+  margin-bottom: 15px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.category ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0; /* Ensure no extra margin */
+}
+
+.category ul li {
+  font-size: 21px; /* Increased font size */
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Arial', sans-serif;
+  text-align: left; /* Align text to the left */
+}
+
+.category .category-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  opacity: 1;
+}
+
+/* Center the last two boxes */
+.diseases-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.diseases-content .category:nth-last-child(2),
+.diseases-content .category:nth-last-child(1) {
+  justify-self: center;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modal Overlay Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Box Styling */
+.modal-box {
+  background: linear-gradient(135deg, #f0e6f6, #d9f4ff);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  color: #333;
+}
+
+/* Heading Styling */
+.modal-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+/* Button Styling */
+.modal-box button {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #ccc;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.modal-box button:hover {
+  background-color: #f0e6f6;
+  border-color: #333;
+  transform: scale(1.05);
+}
+
+/* Input Field Styling */
+.modal-box input[type="text"],
+.modal-box input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+/* Additional Styling for Guest Option Button */
+#guestOption {
+  background-color: #32CD32;
+  color: #fff;
+}
+
+#guestOption:hover {
+  background-color: #2E8B57;
+  color: #fff;
+}
+
+/* Hide initial options and show login/signup form when needed */
+#initialOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#loginFormContainer,
+#signupFormContainer {
+  display: none;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+  .top-section {
+    height: auto; /* Allow top section to adjust based on content */
+    padding-bottom: 60px; /* Add padding to bottom for spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    position: relative; /* Ensure it's positioned relative to the top-section */
+    top: 70px; /* Add space from the top (adjust as needed) */
+    left: 40%; /* Center horizontally */
+    transform: translateX(-50%); /* Center image */
+    width: 90%; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+    z-index: 15; /* Ensure it's above other content */
+  }
+
+  .image-container img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Adjust border radius */
+    margin-right: 20px;
+  }
+
+  .content-container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align content */
+    margin-top: 20px; /* Adjust margin */
+    margin-left: 0; /* Remove left margin */
+    background: none; /* Remove background image */
+    width: 100%; /* Full width */
+  }
+
+  #chatbot-message {
+    margin-top: 20px; /* Add top margin */
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .text-box {
+    width: 90%; /* Adjust width */
+    height: auto; /* Adjust height */
+    margin: 20px 0; /* Adjust margins */
+    padding: 20px; /* Adjust padding */
+    font-size: 14px; /* Decrease font size */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-box h1 {
+    font-size: 24px; /* Decrease font size */
+  }
+
+  .text-box p {
+    font-size: 14px; /* Decrease font size */
+  }
+
+  .highlight {
+    font-size: 14px; /* Decrease font size */
+  }
+
+  .start-diagnosis-btn {
+    background: linear-gradient(45deg, #3d7d4f, #84efb8, #3a86ff);
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Adjust padding */
+    font-size: 14px; /* Decrease font size */
+    font-weight: bold;
+    border-radius: 20px; /* Adjust border radius */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 180px; /* Add margin to top */
+    margin-left: 150px;
+  }
+
+  .start-diagnosis-btn:hover {
+    background: linear-gradient(45deg, #60ea87, #3a86ff, #3b6b47);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+  .problems-section h2{
+    font-size: 22px;
+  }
+
+  .about-content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align content */
+  }
+
+  .about-text, .about-img {
+    margin-left: 0; /* Remove left margin */
+    text-align: center; /* Center align text */
+  }
+.about-section h2{
+  font-size: 22px;
+}
+  .about-text p {
+    font-size: 14px; /* Decrease font size */
+  }
+
+  .about-text ul li {
+    font-size: 14px; /* Decrease font size */
+  }
+
+  .features-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-gap: 20px; /* Adjust gap */
+    padding-left: 0; /* Remove padding */
+    padding-right: 0; /* Remove padding */
+  }
+
+  .feature-box {
+    width: 90%; /* Adjust width */
+    height: auto; /* Adjust height */
+    margin: 0 auto; /* Center align */
+  }
+
+  .feature-box h3 {
+    font-size: 15px; /* Decrease font size */
+  }
+
+  .feature-box p {
+    font-size: 16px; /* Decrease font size */
+  }
+
+  .motivation-container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align content */
+  }
+
+  .motivation-box {
+    width: 90%; /* Adjust width */
+    height: auto; /* Adjust height */
+    margin: 10px 0; /* Adjust margins */
+  }
+
+  .motivation-content p {
+    font-size: 14px; /* Decrease font size */
+  }
+  .motivation-content ul li {
+    font-size: 14px; /* Decrease font size */
+  }
+.problems-text ul li{
+  font-size: 14px;
+}
+  .why-choose-content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align content */
+  }
+
+  .why-choose-img {
+    display: none; /* Hide the image */
+  }
+
+  .why-choose-text {
+    margin-right: 0; /* Remove right margin */
+    text-align: center; /* Center align text */
+  }
+.why-choose-heading h2,.features-section h2,.problems-section h2{
+  font-size: 22px;
+}
+.diseases-section h2,.motivation-section h2,.problems-text h2,.services-section h2{
+  font-size: 22px;
+}
+  .why-choose-cards {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+.motivation-text p{
+  font-size: 15px;
+}
+  .why-choose-card h3 {
+    font-size: 15px; /* Decrease font size */
+  }
+
+  .why-choose-card p {
+    font-size: 14px; /* Decrease font size */
+  }
+
+  .diseases-content {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Adjust gap */
+  }
+
+  .category {
+    width: 90%; /* Adjust width */
+    height: auto; /* Adjust height */
+    margin: 0 auto; /* Center align */
+  }
+
+  .category h3 {
+    font-size: 16px; /* Decrease font size */
+  }
+
+  .category ul li {
+    font-size: 14px; /* Decrease font size */
+  }
+
+  .problems-container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align content */
+  }
+
+  .problems-box {
+    width: 90%; /* Adjust width */
+    height: auto; /* Adjust height */
+    margin: 10px 0; /* Adjust margins */
+  }
+
+  .problems-content h3 {
+    font-size: 16px; /* Decrease font size */
+  }
+
+  .problems-content p {
+    font-size: 14px; /* Decrease font size */
+  }
+
+  .services-container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align content */
+  }
+
+  .service-box {
+    width: 90%; /* Adjust width */
+    height: auto; /* Adjust height */
+    margin: 10px 0; /* Adjust margins */
+  }
+
+  .service-content h3 {
+    font-size: 16px; /* Decrease font size */
+  }
+
+  .service-content p {
+    font-size: 14px; /* Decrease font size */
+  }
+
+/* Chatbot container */
+#chatbot-container {
+  bottom: 10px; /* Adjust bottom margin */
+  right: 10px; /* Adjust right margin */
+}
+
+#chatbot-message {
+  font-size: 12px; /* Decrease font size */
+  padding: 8px 12px; /* Adjust padding */
+  max-width: 200px; /* Adjust max width */
+}
+
+#chatbot-icon {
+  width: 50px; /* Adjust width */
+  height: 50px; /* Adjust height */
+}
+
+#chatbot-icon img {
+  width: 40px; /* Adjust image width */
+  height: 40px; /* Adjust image height */
+}
+
+/* Chatbot iframe */
+#chatbot-frame {
+  width: 90%; /* Adjust width */
+  height: 400px; /* Adjust height */
+  bottom: 70px; /* Adjust bottom positioning */
+  right: 5%; /* Center horizontally */
+}
+
+  /* Ensure there is no horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .navbar .logo {
+    margin-bottom: 0;
+  }
+
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Background for nav-links */
+    padding: 10px 0;
+    position: absolute;
+    top: 60px; /* Adjust the top position below the navbar */
+  }
+
+  .navbar .nav-links li {
+    width: 100%;
+  }
+
+  .navbar .nav-links li a {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .navbar .hamburger-btn {
+    display: block;
+  }
+
+  .navbar .login-btn {
+    display: none;
+  }
+}
+/* Add these styles to handle the toggling */
+.show-nav {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hide-login {
+  display: none !important;
+}
+@media (max-width: 576px) {
+  .navbar .logo img {
+    width: 80px; /* Reduce logo size further on smaller screens */
+  }
+}
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+  .category h3 {
+    font-size: 22px; /* Adjust font size */
+  }
+
+  .category ul li {
+    font-size: 15px; /* Adjust font size */
+  }
+
+  .motivation-text ul li {
+    font-size: 15px; /* Adjust font size */
+  }
+}

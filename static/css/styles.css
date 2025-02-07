@@ -1,0 +1,621 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #edf2f46a, #7ee7de63);
+  }
+  
+  /* Original Glassmorphic Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(11, 14, 17, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .navbar .logo {
+    width: 120px;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .navbar .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Navigation Links */
+  .navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .navbar .nav-links li {
+    position: relative;
+  }
+  
+  .navbar .nav-links li a {
+    text-decoration: none;
+    color: rgb(25, 16, 57);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar .nav-links li a:hover {
+    background: rgba(105, 211, 228, 0.587);
+    transform: translateY(-2px);
+  }
+  
+  .navbar .nav-links li a:active {
+    background: rgba(173, 216, 230, 0.5);
+    transform: scale(0.95);
+  }
+  
+  .navbar .nav-links li a i {
+    color: #256494; /* Light Blue Icon Color */
+  }
+  
+  /* Login Button */
+  .navbar .login-btn {
+    background: linear-gradient(to right, #87ceeb, #03274a);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar .login-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(30, 144, 255, 0.5);
+  }
+  
+  .navbar .login-btn:active {
+    transform: scale(0.95);
+    background: #1e90ff;
+  }
+  
+  /* Hamburger Button */
+  .hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: rgb(25, 16, 57);
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 25px; /* Position it to the right */
+  }
+  
+  /* Main rectangular box */
+  .box {
+    margin: 85px auto;
+    width: 98%;
+    height: 200px; /* Original height */
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Black translucent film with blur effect */
+  .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #363939, #36435b);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+  }
+  
+  /* Centered text content */
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+  
+  /* Text styles */
+  .content h1 {
+    font-size: 28px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  .content h2 {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+  
+  .content h3 {
+    font-size: 40px;
+    margin: 0;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  /* General Body Styles */
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Timeline Container */
+  #timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 0; /* Reduced padding from the top */
+  }
+  
+  .demo-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    max-width: 1200px;
+    position: relative;
+  }
+  
+  /* Vertical Line with Dots */
+  .demo-card-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -20px; /* Start the line at the bottom edge of the start button */
+    bottom: 50px; /* End the line above the finish button */
+    left: 50%;
+    width: 4px;
+    background: #595798;
+    transform: translateX(-50%);
+  }
+  
+  .dot {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #5160ce;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  /* Timeline Cards */
+  .demo-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%; /* Adjusted width of the cards */
+    padding: 20px; /* Reduced padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto; /* Center cards horizontally and add space below the start button */
+  }
+  
+  /* Different gradient effects for each card */
+  .demo-card--step1 {
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+  }
+  
+  .demo-card--step2 {
+    background: linear-gradient(135deg, #f1f8e9, #aed581);
+  }
+  
+  .demo-card--step3 {
+    background: linear-gradient(135deg, #fce4ec, #f48fb1);
+  }
+  
+  .demo-card--step4 {
+    background: linear-gradient(135deg, #fff3e0, #ffb74d);
+  }
+  
+  .demo-card--step5 {
+    background: linear-gradient(135deg, #e8eaf6, #7986cb);
+  }
+  
+  .demo-card--step6 {
+    background: linear-gradient(135deg, #ede7f6, #9575cd);
+  }
+  
+  .demo-card--step7 {
+    background: linear-gradient(135deg, #e0f2f1, #4db6ac);
+  }
+  
+  .demo-card--step8 {
+    background: linear-gradient(135deg, #f3e5f5, #ba68c8);
+  }
+  
+  .demo-card--step9 {
+    background: linear-gradient(135deg, #fffde7, #fff176);
+  }
+  
+  .demo-card--step10 {
+    background: linear-gradient(135deg, #fbe9e7, #ff8a65);
+  }
+  
+  .demo-card--step11 {
+    background: linear-gradient(135deg, #e0f7fa, #26c6da);
+  }
+  
+  .demo-card--step12 {
+    background: linear-gradient(135deg, #f9fbe7, #dce775);
+  }
+  
+  .demo-card--step13 {
+    background: linear-gradient(135deg, #eceff1, #90a4ae);
+  }
+  
+  .demo-card--step14 {
+    background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+  }
+  
+  .demo-card--step15 {
+    background: linear-gradient(135deg, #d7ccc8, #a1887f);
+  }
+  
+  .demo-card--step16 {
+    background: linear-gradient(135deg, #ffecb3, #ffd54f);
+  }
+  
+  .demo-card--step17 {
+    background: linear-gradient(135deg, #c8e6c9, #81c784);
+  }
+  
+  .demo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .demo-card .head {
+    display: flex;
+    align-items: center;
+    background-color: #46b8e9;
+    color: #fff;
+    padding: 15px;
+  }
+  
+  .demo-card .number-box {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+  
+  .demo-card .head h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    line-height: 1.5rem;
+    word-break: break-word; /* Allow long words to break */
+  }
+  
+  .demo-card .head h2 span {
+    font-weight: bold;
+  }
+  
+  .demo-card .body p {
+    font-size: 1.1rem;
+    line-height: 1.2rem; /* Reduced line height */
+    margin: 10px 0;
+    word-break: break-word; /* Allow long words to break */
+  }
+  
+  .demo-card .body img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Buttons */
+  .timeline-button {
+    background: linear-gradient(to right, #46b8e9, #1e90ff); /* Gradient background */
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    margin: -50px 0 20px; /* Reduced margin from the top and added margin-bottom */
+    position: relative;
+    z-index: 3; /* Ensure button is above the line */
+    border: 2px solid #1e90ff; /* Border */
+    box-shadow: 0 0 15px rgba(70, 184, 233, 0.6); /* Glowing shadow effect */
+  }
+  
+  .timeline-button:hover {
+    background: linear-gradient(to right, #1e90ff, #46b8e9); /* Hover gradient background */
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .timeline-button:after {
+    content: '🚀'; /* Sticker */
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.5rem;
+  }
+  .gradient-line {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, rgb(95, 224, 215), rgb(49, 62, 116));
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+    animation: lineAnimation 2s infinite;
+  }
+  
+  @keyframes lineAnimation {
+    0% {
+      width: 100%;
+    }
+    25% {
+      width: 0;
+    }
+    50% {
+      width: 0;
+    }
+    75% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .finish-button:after {
+    content: '🏁'; /* Red flag for finish button */
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.5rem;
+    color: red;
+  }
+  
+  .demo-card:nth-child(odd) {
+    align-self: flex-start;
+    margin-left: -30%;
+  }
+  
+  .demo-card:nth-child(even) {
+    align-self: flex-end;
+    margin-right: -30%;
+  }
+  /* Gradient line between sections */
+  .gradient-line-between-sections {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, rgb(241, 153, 223),#ffffff, rgb(234, 44, 69));
+    position: relative;
+    animation: lineAnimation 2s infinite;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1200px) {
+    .demo-card-wrapper {
+      width: 70%;
+    }
+  
+    .demo-card {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .demo-card-wrapper {
+      width: 80%;
+    }
+  
+    .demo-card {
+      width: 90%;
+    }
+  
+    .navbar .nav-links {
+      display: none;
+    }
+  
+    .navbar .login-btn {
+      padding: 10px 15px;
+    }
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+  
+    .navbar .logo {
+      margin-bottom: 0;
+    }
+  
+    .navbar .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9); /* Background for nav-links */
+      padding: 10px 0;
+      position: absolute;
+      top: 60px; /* Adjust the top position below the navbar */
+    }
+  
+    .navbar .nav-links li {
+      width: 100%;
+    }
+  
+    .navbar .nav-links li a {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  
+    .navbar .hamburger-btn {
+      display: block;
+    }
+  
+    .navbar .login-btn {
+      display: none;
+    }
+  
+    .box {
+      height: 150px; /* Reduce the box height */
+    }
+  
+    .demo-card {
+      width: 90%;
+      padding: 20px; /* Further reduce the padding */
+    }
+  
+    .content h1 {
+      font-size: 20px;
+    }
+  
+    .content h2 {
+      font-size: 16px;
+    }
+  
+    .content h3 {
+      font-size: 30px;
+    }
+  
+    .timeline-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+    
+    .demo-card:nth-child(odd) {
+      align-self: flex-start;
+      margin-left: -50%;
+    }
+    
+    .demo-card:nth-child(even) {
+      align-self: flex-end;
+      margin-right: -50%;
+    }
+    
+    .demo-card {
+      width: 40%; /* Adjusted width to fit the content */
+    }
+  
+    .demo-card .head h2 {
+      font-size: 1rem;
+      margin: 0;
+      line-height: 1.3rem; /* Adjusted line height */
+      word-break: break-word; /* Allow long words to break */
+    }
+  
+    .demo-card .body p {
+      font-size: 0.8rem;
+      line-height: 1.2rem; /* Reduced line height */
+      margin: 10px 0;
+      word-break: break-word; /* Allow long words to break */
+    }
+    
+    .demo-card .body img {
+      display: none; /* Hide images */
+    }
+  
+    .demo-card .number-box {
+      font-size: 1rem;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 5px 10px; /* Reduce padding */
+      border-radius: 5px;
+      margin-right: 10px; /* Reduce margin */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .navbar .logo img {
+      width: 80px; /* Reduce logo size further on smaller screens */
+    }
+  
+    .box {
+      height: 120px; /* Further reduce the box height */
+    }
+  
+    .content h1 {
+      font-size: 18px;
+    }
+  
+    .content h2 {
+      font-size: 14px;
+    }
+  
+    .content h3 {
+      font-size: 24px;
+    }
+  
+    .demo-card-wrapper {
+      width: 90%;
+    }
+  
+    .demo-card {
+      width: 100%;
+      padding: 15px; /* Further reduce padding */
+    }
+  
+    .timeline-button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  }
+  
+  /* Add these styles to handle the toggling */
+  .show-nav {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hide-login {
+    display: none !important;
+  }
