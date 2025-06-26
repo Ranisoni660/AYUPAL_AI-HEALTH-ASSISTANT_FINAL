@@ -1,8 +1,18 @@
 # 🌿 AyuPal: Your Personal AI Health Assistant
 
 **AyuPal** is an AI-powered health assistant designed to help users take control of their health from the comfort of their home. It provides personalized disease predictions, medication suggestions, home remedies, diet plans, and workout routines — all in one intelligent platform.
-https://media.licdn.com/dms/image/v2/D4D22AQGbLS2czI27Og/feedshare-shrink_800/B4DZTgCn.MGcAg-/0/1738925580509?e=1753920000&v=beta&t=RTFpmUbUsFfvZX9Nv17b-SwFRMWDxbrjwETN7U6XD6E
+
 ---
+![chatbot](https://github.com/user-attachments/assets/c6b73a23-e7ba-4c8e-8389-177ed7e005a7)
+
+![main](https://github.com/user-attachments/assets/f95515d9-46ff-46ce-9e14-b8912c6c745b)
+
+![pt](https://github.com/user-attachments/assets/973ff78e-9a22-4ed3-ac30-2b78fc43fe48)
+
+![test](https://github.com/user-attachments/assets/e03ecc97-49f6-49c1-a75e-f338c3e887c1)
+
+![web1](https://github.com/user-attachments/assets/12a2d99e-6401-4fe4-b48b-17b8b5f3943f)
+
 
 ## 📌 Features
 
@@ -31,6 +41,20 @@ https://media.licdn.com/dms/image/v2/D4D22AQGbLS2czI27Og/feedshare-shrink_800/B4
   Lets users explore features without signing up.
 
 ---
+![contact](https://github.com/user-attachments/assets/dff4a4fc-62ca-4286-9e6c-445c029d5d56)
+
+![dr](https://github.com/user-attachments/assets/58125510-413a-493a-99b1-2866acaddbad)
+
+![h](https://github.com/user-attachments/assets/08c3aa84-4c02-40c2-a596-55a6650d8b96)
+
+
+![login](https://github.com/user-attachments/assets/55194735-0584-4f32-a5e5-c0e06df69d29)
+
+![mainweb](https://github.com/user-attachments/assets/8add48c2-6f71-4e5d-b510-85bd192350ca)
+
+
+![web2-test](https://github.com/user-attachments/assets/79d80ea6-6a65-4bf8-bcd8-dc08b2bc39b5)
+
 
 ## 🚀 Future Enhancements
 
