@@ -77,9 +77,57 @@
 
 ---
 
+
 ## 📦 Setup Instructions
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/ayupal.git
    cd ayupal
+2. Create a virtual environment
+
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+3.Install dependencies
+
+pip install -r requirements.txt
+
+4. Run the app
+
+python app.py
+
+5. Visit
+
+http://localhost:5000
+
+Project Structure
+
+AyuPal/
+├── app.py
+├── /templates
+│   ├── index.html
+│   ├── chatbot.html
+│   ├── report.html
+├── /static
+│   ├── /css
+│   ├── /js
+├── /models
+│   ├── disease_predictor.pkl
+│   ├── diet_recommender.pkl
+├── requirements.txt
+└── README.md
+
+
+🤝 Contributing
+
+We welcome contributions!
+Please fork the repository, create a new branch, and submit a pull request.
+
+Disclaimer
+
+AyuPal is not a replacement for professional medical advice. It is intended for educational and general wellness use only.
+
+License
+
+This project is licensed under the MIT License.
